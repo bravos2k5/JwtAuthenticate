@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: JWT-Auth-Service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: bravos
+    password: 4gi5uKqCtmYRRqRyoJTmu9U
+    url: jdbc:postgresql://postgres:5432/jwt_auth_service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+
+server:
+  port: 8080

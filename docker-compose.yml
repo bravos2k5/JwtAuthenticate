@@ -1,0 +1,36 @@
+name: steak
+
+services:
+
+  jwt-auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: bravos/jwt-auth-service:latest
+    container_name: jwt-auth-service
+    restart: always
+    depends_on:
+      - postgres
+    networks:
+      - pre-event-networks
+    ports:
+      - "8080:8080"
+
+  postgres:
+    image: postgres:17.5-alpine3.22
+    container_name: pre-event-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: bravos
+      POSTGRES_PASSWORD: 4gi5uKqCtmYRRqRyoJTmu9U
+      POSTGRES_DB: jwt_auth_service
+    networks:
+      - pre-event-networks
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+
+networks:
+  pre-event-networks:
+    driver: bridge
