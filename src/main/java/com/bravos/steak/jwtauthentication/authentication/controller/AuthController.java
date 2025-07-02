@@ -1,7 +1,6 @@
 package com.bravos.steak.jwtauthentication.authentication.controller;
 
 import com.bravos.steak.jwtauthentication.authentication.model.request.LoginRequest;
-import com.bravos.steak.jwtauthentication.authentication.model.request.RegisterRequest;
 import com.bravos.steak.jwtauthentication.authentication.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +22,6 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
         return ResponseEntity.ok(authService.login(loginRequest));
-    }
-
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest registerRequest) {
-        return ResponseEntity.ok(authService.register(registerRequest));
     }
 
 }
