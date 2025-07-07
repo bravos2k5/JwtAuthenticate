@@ -6,6 +6,7 @@ build/
 !**/src/test/**/build/
 private.pem
 public.pem
+.env
 
 ### STS ###
 .apt_generated

@@ -32,4 +32,5 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation 'io.github.cdimascio:dotenv-java:3.2.0'
 }
