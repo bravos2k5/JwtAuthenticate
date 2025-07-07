@@ -10,6 +10,7 @@ RUN gradle build -x test --no-daemon
 
 FROM azul/zulu-openjdk-alpine:21-jre-headless-latest AS runtime
 WORKDIR /app
+COPY .env .env
 COPY private.pem ./
 COPY public.pem ./
 COPY --from=build /app/build/libs/*.jar jwt-auth.jar
